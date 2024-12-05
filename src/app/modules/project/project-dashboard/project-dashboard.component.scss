@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+@media(max-width:576px) {
+  ::ng-deep {
+
+    .mat-mdc-row,
+    .mdc-data-table__content {
+      font-size: 12px !important;
+    }
+
+    .mdc-data-table__cell,
+    .mdc-data-table__header-cell {
+      padding: 0 2px !important;
+    }
+  }
+}

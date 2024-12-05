@@ -1,1 +1,477 @@
+@use '@angular/material'as mat;
+
+@import url("https://fonts.googleapis.com/css2?family=Bellota:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Open+Sans:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+
+html {
+  @include mat.theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: var(--fontFamily2),
+      density: 0,
+    ));
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--textColor) !important;
+  background-color: var(--bgColor) !important;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--selectColor);
+}
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  --bgColor: #ffffff;
+  --parimeryColor: #fff;
+  --textColor: #000;
+  --selectColor: #ffdd59;
+  --hoverColor: #d2e0fb;
+  --hue-color: 230;
+  --menuColor: #555;
+  --headerBg: #f3f4f6;
+  --borderColor: #ddd;
+  --menuTextSize: 17px;
+  --tableBg: rgba(239, 245, 246, .6);
+  --cardBg: rgba(0, 0, 0, 0.23);
+  --cardBorder: 0px solid transparent;
+  --paraSize: 16px;
+  --paraSize20: 20px;
+  --commonSubHead: 24px;
+  --commonHeadSize: 48px;
+  --fontFamily1: "Josefin Sans", sans-serif;
+  --fontFamily2: "Open Sans", sans-serif;
+  --headingFontFamily: "Josefin Sans", sans-serif;
+  --letterSpace: 1px;
+
+  @include mat.button-overrides((filled-container-shape: 6px,
+      filled-container-color:#AD49E1,
+      filled-label-text-color: white,
+      filled-container-height:35px,
+    ));
+  @include mat.table-overrides((row-item-container-height:40px,
+      background-color: var(--tableBg),
+      header-headline-color: var(--textColor),
+      row-item-label-text-color:var(--textColor),
+
+    ));
+  @include mat.form-field-overrides((outlined-input-text-placeholder-color:var(--textColor),
+      outlined-input-text-color:var(--textColor),
+      outlined-outline-color:var(--textColor),
+      hover-state-layer-opacity:none,
+      outlined-label-text-color:var(--textColor),
+      outlined-hover-label-text-color:var(--textColor),
+      outlined-hover-outline-color:var(--textColor),
+      outlined-focus-label-text-color:var(--textColor),
+      outlined-focus-outline-color:var(--textColor),
+    ));
+
+}
+
+// header styling
+/* preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: azure;
+  z-index: 99;
+}
+
+main {
+  position: relative;
+  top: 80px;
+}
+
+#preloader img.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+}
+
+/* header */
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  background-color: var(--headerBg);
+  border-bottom: 1.5px solid var(--borderColor);
+}
+
+img.logo {
+  width: 48px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+ul.menuList {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+li.menuItem {
+  list-style: none;
+}
+
+li.menuItem a,
+li.menuItem a:after,
+li.menuItem a:before {
+  transition: all 0.5s;
+}
+
+li.menuItem a:hover {
+  color: var(--menuColor);
+}
+
+li.menuItem a {
+  text-decoration: none;
+  color: var(--textColor);
+  font-family: var(--fontFamily1);
+  letter-spacing: 1px;
+  transition: all 300ms linear;
+  font-weight: 400;
+  font-size: var(--menuTextSize);
+  position: relative;
+}
+
+li.menuItem a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 20px;
+  margin: auto;
+  width: 0%;
+  content: "";
+  color: transparent;
+  background: #aaa;
+  height: 2px;
+}
+
+li.menuItem a:hover:after {
+  width: 100%;
+}
+
+/* theme button */
+input#theme {
+  visibility: hidden;
+}
+
+label.themeLabel {
+  width: 6rem;
+  height: 3rem;
+  display: inline-block;
+  background: var(--textColor);
+  position: relative;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.themeBall {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(15px, 10px);
+  display: inline-block;
+  transition: all 0.2s linear;
+  color: var(--bgColor);
+}
+
+input#theme:checked+label.themeLabel .themeBall {
+  transform: translate(65px, 10px);
+}
+
+i.fa.fa-lightbulb-o {
+  font-size: 28px;
+}
+
+/* mobile menu styling */
+.mobileBtn {
+  .mat-icon {
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+nav.navbar .menuOpen {
+  display: none;
+}
+
+nav.navbar .menuClose {
+  display: none;
+}
+
+/* Scroll bar styling */
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(0.44, rgb(122, 153, 217)),
+      color-stop(0.72, rgb(73, 125, 189)),
+      color-stop(0.86, rgb(28, 58, 148)));
+}
+
+// profile
+.profilePic img {
+  width: 239px;
+  height: 239px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.profileHeading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profileCenterTxt {
+  font-size: var(--paraSize20);
+  font-family: var(--fontFamily1);
+}
+
+.subHeading {
+  font-size: var(--commonSubHead);
+  font-family: var(--fontFamily1);
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  color: var(--textColor);
+}
+
+.para {
+  font-size: var(--paraSize);
+  font-family: var(--fontFamily2);
+  line-height: 30px;
+  transition: all 0.3s ease-in-out;
+  color: var(--textColor);
+}
+
+.detailsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.commonMiniHead {
+  font-size: var(--paraSize);
+  font-weight: 500;
+  font-family: var(--fontFamily2);
+  letter-spacing: 2px;
+}
+
+.commonHeading {
+  font-size: var(--commonHeadSize);
+  font-weight: 400;
+  font-family: var(--headingFontFamily);
+  text-align: center;
+  letter-spacing: var(--letterSpace);
+}
+
+.profilePic {
+  text-align: center;
+}
+
+/* skills section  */
+
+.skillItem {
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px var(--cardBg);
+  min-width: 200px;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--parimeryColor);
+  cursor: pointer;
+  border:var(--cardBorder)
+}
+
+.skillItem img {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+// responsive code
+.commonSection {
+  padding: 50px 0;
+}
+
+@media (max-width: 767px) {
+
+  /* navbar */
+  ul.menuList {
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    padding: 15px 0;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: -50%;
+    height: 100%;
+    transition: all 300ms ease-in-out;
+    background-color: var(--hoverColor);
+  }
+
+  nav.navbar.mobileWidth ul.menuList {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 50%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav.navbar .menuOpen {
+    display: block;
+  }
+
+  nav.navbar.mobileWidth .menuOpen {
+    display: none;
+  }
+
+  nav.navbar.mobileWidth .menuClose {
+    display: block;
+  }
+
+  .profileFlex {
+    flex-wrap: wrap;
+  }
+
+  .profileFlexItem {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  h1.commonHeading {
+    font-size: 36px !important;
+  }
+
+  .para {
+    font-size: 14px !important;
+    line-height: 26px !important;
+    text-align: center;
+  }
+
+  p.profileCenterTxt {
+    font-size: 16px !important;
+  }
+
+  .subHeading {
+    font-size: 22px !important;
+  }
+
+  .skillRow {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .skill {
+    gap: 20px;
+    padding: 50px 0 50px 0;
+  }
+
+  .commonSection {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 496px) {
+  .subHeading {
+    font-size: 17px !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .para {
+    font-size: 13px !important;
+    line-height: 20px !important;
+  }
+
+  h1.commonHeading {
+    font-size: 32px !important;
+  }
+
+  h3.commonMiniHead {
+    font-size: 12px !important;
+  }
+
+  p.profileCenterTxt {
+    font-size: 15px !important;
+  }
+
+  .profileFlex {
+    padding: 7px 0 0 0;
+  }
+
+  .profileHeading {
+    gap: 8px;
+  }
+
+  .profilePic img {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .skillItem {
+    min-width: 120px !important;
+    min-height: 110px !important;
+  }
+}
