@@ -9,6 +9,5 @@ import { ResumeService } from '../resume.service';
   styleUrls: ['./resume-dashboard.component.scss'],
 })
 export class ResumeDashboardComponent {
-  src = 'https://maheshjsdev.github.io/cv';
   constructor(private resumeServ: ResumeService) {}
 }

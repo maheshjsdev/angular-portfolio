@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ResumeDashboardComponent } from './resume-dashboard/resume-dashboard.component';
 import { MaterialModule } from '../../shared/material.module';
 import { RouterModule, Routes } from '@angular/router';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 const routes: Routes = [{ path: '', component: ResumeDashboardComponent }];
 
 @NgModule({
@@ -11,7 +10,6 @@ const routes: Routes = [{ path: '', component: ResumeDashboardComponent }];
   imports: [
     CommonModule,
     MaterialModule,
-    PdfViewerModule,
     RouterModule.forChild(routes),
   ],
 })

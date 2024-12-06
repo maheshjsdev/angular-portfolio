@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ResumeService {
-  private pdfUrl = 'https://maheshjsdev.github.io/cv';
   constructor(private http: HttpClient) {}
  
 }

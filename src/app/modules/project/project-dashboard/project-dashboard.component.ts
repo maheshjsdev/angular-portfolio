@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProjectService } from '../project.service';
 
@@ -7,6 +7,7 @@ import { ProjectService } from '../project.service';
   standalone: false,
   templateUrl: './project-dashboard.component.html',
   styleUrl: './project-dashboard.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectDashboardComponent {
   displayedColumns: string[] = ['id', 'proName', 'build'];
