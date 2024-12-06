@@ -49,7 +49,7 @@ body {
   --headerBg: #f3f4f6;
   --borderColor: #ddd;
   --menuTextSize: 17px;
-  --tableBg: rgba(239, 245, 246, .6);
+  --tableBg:rgba(239, 245, 246, .6);
   --cardBg: rgba(0, 0, 0, 0.23);
   --cardBorder: 0px solid transparent;
   --paraSize: 16px;
@@ -60,27 +60,30 @@ body {
   --fontFamily2: "Open Sans", sans-serif;
   --headingFontFamily: "Josefin Sans", sans-serif;
   --letterSpace: 1px;
+  --inputOutline:rgba(0, 0, 0, 0.1);
 
   @include mat.button-overrides((filled-container-shape: 6px,
       filled-container-color:#AD49E1,
       filled-label-text-color: white,
       filled-container-height:35px,
+      // protected-ripple-color:var(--hoverColor)
     ));
   @include mat.table-overrides((row-item-container-height:40px,
       background-color: var(--tableBg),
       header-headline-color: var(--textColor),
       row-item-label-text-color:var(--textColor),
+      row-item-outline-color:var(--borderColor)
 
     ));
   @include mat.form-field-overrides((outlined-input-text-placeholder-color:var(--textColor),
       outlined-input-text-color:var(--textColor),
-      outlined-outline-color:var(--textColor),
+      outlined-outline-color:var(--inputOutline),
       hover-state-layer-opacity:none,
       outlined-label-text-color:var(--textColor),
-      outlined-hover-label-text-color:var(--textColor),
-      outlined-hover-outline-color:var(--textColor),
+      outlined-hover-label-text-color:var(--inputOutline),
+      outlined-hover-outline-color:var(--inputOutline),
       outlined-focus-label-text-color:var(--textColor),
-      outlined-focus-outline-color:var(--textColor),
+      outlined-focus-outline-color:var(--inputOutline),
     ));
 
 }
@@ -320,34 +323,13 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-/* skills section  */
-
-.skillItem {
-  padding: 5px;
-  border-radius: 15px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px var(--cardBg);
-  min-width: 200px;
-  min-height: 190px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  transition: all 0.3s ease-in-out;
-  background-color: var(--parimeryColor);
-  cursor: pointer;
-  border:var(--cardBorder)
-}
-
-.skillItem img {
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-
-
 
 // responsive code
 .commonSection {
   padding: 50px 0;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 200px) !important;
 }
 
 @media (max-width: 767px) {

@@ -3,26 +3,33 @@
         <h1 class="commonHeading mb-4">My Top Skills</h1>
         <div class="row justify-content-center">
             <div class="skillBlock">
-                <div class="skillItem">
-                    <img src="./assets/img/icons8-html-5.svg" alt="html">
-                </div>
-                <div class="skillItem">
-                    <img src="./assets/img/icons8-css3.svg" alt="css">
-                </div>
-
-                <div class="skillItem">
-                    <img src="./assets/img/bootstrap.svg" alt="bootstrap">
-                </div>
-                <div class="skillItem">
-                    <img src="./assets/img/icons8-javascript.svg" alt="js">
-                </div>
-                <div class="skillItem">
-                    <img src="./assets/img/jquery.svg" alt="jquery">
-                </div>
-
-                <div class="skillItem">
-                    <img src="./assets/img/angularjs.svg" alt="angularjs">
-                </div>
+                @for(s of skill; track s;){
+                <button mat-raised-button class="skillItem" (click)="getAlt(s.alt)">
+                    <img [src]="s.path" [alt]="s.alt">
+                </button>
+                }
+            </div>
+            <div class="col-md-12 mt-4">
+                @if(dataTable){
+                <table mat-table [dataSource]="dataSource">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="proName">
+                        <th mat-header-cell *matHeaderCellDef>Project Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.proName}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="build">
+                        <th mat-header-cell *matHeaderCellDef>Development Skills</th>
+                        <td mat-cell *matCellDef="let element"> {{element.build}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openNewProject(row.id)"
+                        role="button"></tr>
+                </table>
+                }
             </div>
         </div>
     </div>

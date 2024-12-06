@@ -14,7 +14,7 @@ import { ResumeDashboardComponent } from '../../modules/resume/resume-dashboard/
 export class HeaderComponent implements OnInit {
   isDarkMode?: boolean;
   mobileWidthToggle: boolean = false;
-  logoPath?: string;
+  logoPath: string = './assets/img/mdlogo.svg';
   constructor(private _sharedServ: SharedService, private dialog: MatDialog) {}
   ngOnInit(): void {
     this.themeToggleFun();
