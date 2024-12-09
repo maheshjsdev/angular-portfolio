@@ -7,11 +7,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MaterialModule } from './shared/material.module';
 import { HeaderComponent } from './core/header/header.component';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { LoaderComponent } from './core/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

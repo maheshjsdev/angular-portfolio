@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { SharedService } from '../../shared/shared.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -15,7 +15,11 @@ export class HeaderComponent implements OnInit {
   isDarkMode?: boolean;
   mobileWidthToggle: boolean = false;
   logoPath: string = './assets/img/mdlogo.svg';
-  constructor(private _sharedServ: SharedService, private dialog: MatDialog) {}
+  constructor(
+    private _sharedServ: SharedService,
+    private dialog: MatDialog,
+    private elementRef: ElementRef
+  ) {}
   ngOnInit(): void {
     this.themeToggleFun();
   }
@@ -50,4 +54,11 @@ export class HeaderComponent implements OnInit {
       });
     }
   };
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.mobileWidthToggle = false;
+    }
+  }
 }

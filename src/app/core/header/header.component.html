@@ -2,7 +2,7 @@
     <div class="container">
         <div class="headerContainer">
             <div class="brand">
-                <a href="#"><img class="logo" [src]="logoPath"></a>
+                <a routerLink="profile"><img class="logo" [src]="logoPath"></a>
             </div>
             <nav class="navbar" [class.mobileWidth]="mobileWidthToggle">
                 <ul class="menuList">
@@ -11,7 +11,7 @@
                     <li (click)="closeMenuRightbar()" class="menuItem"><a routerLink="project">Projects</a></li>
                     <li (click)="closeMenuRightbar()" class="menuItem"><a
                             href="https://maheshjsdev.github.io/cv" target="_blank">Resume</a></li>
-                    <li class="menuItem">
+                    <li class="menuItem" (click)="closeMenuRightbar()">
                         <button mat-mini-fab (click)="changeTheme()">
                             @if(isDarkMode){
                             <mat-icon>wb_sunny</mat-icon>
