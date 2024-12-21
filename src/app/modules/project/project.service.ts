@@ -7,51 +7,51 @@ export class ProjectService {
   tableData: any = [
     {
       id: 1,
+      proName: 'Brown Living',
+      build: 'HTML, CSS, Bootstrap, Angular, Typescript, Nodejs',
+      path: 'https://app.brownlivingindia.com',
+    },
+    {
+      id: 2,
       proName: 'Solo',
       build: 'HTML, CSS, Bootstrap, JS, Jquery',
       path: './assets/projects/solo/index.html',
     },
     {
-      id: 2,
+      id: 3,
       proName: 'CrudApp',
       build: 'HTML, CSS, Bootstrap, AngularJS',
       path: './assets/projects/crudapp/index.html',
     },
     {
-      id: 3,
+      id: 4,
       proName: 'Organic',
       build: 'HTML, CSS, Bootstrap, JS, Jquery',
       path: './assets/projects/organic/index.html',
     },
     {
-      id: 4,
+      id: 5,
       proName: '3lLogics',
       build: 'HTML, CSS, Bootstrap, JS, Jquery',
       path: './assets/projects/3lLogics/index.html',
     },
     {
-      id: 5,
+      id: 6,
       proName: 'Zenith',
       build: 'HTML, CSS, Bootstrap, JS, Jquery',
       path: './assets/projects/zenith/index.html',
     },
     {
-      id: 6,
+      id: 7,
       proName: 'Zenith Form',
       build: 'HTML, CSS, Bootstrap, AngularJS',
       path: './assets/projects/zenithform/index.html',
     },
     {
-      id: 7,
+      id: 8,
       proName: 'Currency Converter',
       build: 'HTML, CSS, Bootstrap, JS',
       path: './assets/projects/currencyConverter/index.html',
-    },
-    {
-      id: 8,
-      proName: 'Dropdown Select',
-      build: 'HTML, CSS, AngularJS',
-      path: './assets/projects/dropdownSelect/index.html',
     },
     {
       id: 9,

@@ -17,7 +17,7 @@ export class SkillDashboardComponent {
     { path: './assets/img/bootstrap.svg', alt: 'bootstrap' },
     { path: './assets/img/icons8-javascript.svg', alt: 'js' },
     { path: './assets/img/jquery.svg', alt: 'jquery' },
-    { path: './assets/img/angularjs.svg', alt: 'angularjs' },
+    { path: './assets/img/angularjs.svg', alt: 'angular' },
   ];
   displayedColumns: string[] = ['id', 'proName', 'build'];
   dataSource = new MatTableDataSource();
