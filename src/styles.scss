@@ -49,7 +49,7 @@ body {
   --headerBg: #f3f4f6;
   --borderColor: #ddd;
   --menuTextSize: 17px;
-  --tableBg:rgba(239, 245, 246, .6);
+  --tableBg: rgba(239, 245, 246, .6);
   --cardBg: rgba(0, 0, 0, 0.23);
   --cardBorder: 0px solid transparent;
   --paraSize: 16px;
@@ -60,7 +60,7 @@ body {
   --fontFamily2: "Open Sans", sans-serif;
   --headingFontFamily: "Josefin Sans", sans-serif;
   --letterSpace: 1px;
-  --inputOutline:rgba(0, 0, 0, 0.1);
+  --inputOutline: rgba(0, 0, 0, 0.1);
 
   @include mat.button-overrides((filled-container-shape: 6px,
       filled-container-color:#AD49E1,
@@ -72,9 +72,7 @@ body {
       background-color: var(--tableBg),
       header-headline-color: var(--textColor),
       row-item-label-text-color:var(--textColor),
-      row-item-outline-color:var(--borderColor)
-
-    ));
+      row-item-outline-color:var(--borderColor)));
   @include mat.form-field-overrides((outlined-input-text-placeholder-color:var(--textColor),
       outlined-input-text-color:var(--textColor),
       outlined-outline-color:var(--inputOutline),
@@ -162,12 +160,17 @@ li.menuItem a:hover {
   color: var(--menuColor);
 }
 
+li.menuItem a.active {
+  border-bottom: 2px solid #aaa;
+  padding-bottom: 5px;
+}
+
 li.menuItem a {
   text-decoration: none;
   color: var(--textColor);
   font-family: var(--fontFamily1);
   letter-spacing: 1px;
-  transition: all 300ms linear;
+  transition: border 200ms linear;
   font-weight: 400;
   font-size: var(--menuTextSize);
   position: relative;
@@ -178,7 +181,7 @@ li.menuItem a:after {
   bottom: 0;
   left: 0;
   right: 0;
-  top: 20px;
+  top: 23px;
   margin: auto;
   width: 0%;
   content: "";

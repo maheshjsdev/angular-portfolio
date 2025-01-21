@@ -6,10 +6,13 @@
             </div>
             <nav class="navbar" [class.mobileWidth]="mobileWidthToggle">
                 <ul class="menuList">
-                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLink="profile">Profile</a></li>
-                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLink="skill">Skills</a></li>
-                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLink="project">Projects</a></li>
-                    <li (click)="closeMenuRightbar()" class="menuItem"><a
+                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLinkActive="active"
+                            routerLink="profile">Profile</a></li>
+                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLinkActive="active"
+                            routerLink="skill">Skills</a></li>
+                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLinkActive="active"
+                            routerLink="project">Projects</a></li>
+                    <li (click)="closeMenuRightbar()" class="menuItem"><a routerLinkActive="active"
                             href="./assets/Mahesh-Cv.pdf" target="_blank">Resume</a></li>
                     <li class="menuItem" (click)="closeMenuRightbar()">
                         <button mat-mini-fab (click)="changeTheme()">
