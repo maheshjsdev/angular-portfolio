@@ -229,8 +229,6 @@ i.fa.fa-lightbulb-o {
 /* mobile menu styling */
 .mobileBtn {
   .mat-icon {
-    font-size: 30px;
-    cursor: pointer;
     font-weight: bold;
   }
 }
@@ -335,6 +333,12 @@ body::-webkit-scrollbar-thumb {
   min-height: calc(100vh - 200px) !important;
 }
 
+.tableContainer {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 767px) {
 
   /* navbar */
@@ -417,6 +421,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 496px) {
+  .mat-column-id {
+    min-width: 50px;
+    display: none;
+  }
   .subHeading {
     font-size: 17px !important;
     width: 100%;
@@ -459,4 +467,18 @@ body::-webkit-scrollbar-thumb {
     min-width: 120px !important;
     min-height: 110px !important;
   }
+}
+.mat-mdc-table-sticky{
+//  background: var(--tableBg) !important;
+//  backdrop-filter: blur(2px) !important;
+  opacity: 1;
+
+}
+
+.mat-column-proName {
+  min-width: 130px;
+}
+
+.mat-column-build {
+  min-width:330px;
 }

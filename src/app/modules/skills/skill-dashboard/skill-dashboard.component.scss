@@ -10,8 +10,8 @@
         padding: 5px;
         border-radius: 15px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px var(--cardBg) !important;
-        min-width: 200px;
-        min-height: 190px;
+        min-width: 175px;
+        min-height: 170px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -35,4 +35,19 @@
         }
     }
 
+}
+
+@media(max-width:576px) {
+    ::ng-deep {
+
+        .mat-mdc-row,
+        .mdc-data-table__content {
+            font-size: 12px !important;
+        }
+
+        .mdc-data-table__cell,
+        .mdc-data-table__header-cell {
+            padding: 0 2px !important;
+        }
+    }
 }
