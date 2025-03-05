@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { SharedService } from '../../shared/shared.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,16 +24,23 @@ export class HeaderComponent implements OnInit {
   constructor(
     private _sharedServ: SharedService,
     private dialog: MatDialog,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private renderer: Renderer2
   ) {}
   ngOnInit(): void {
     this.themeToggleFun();
   }
   menuToggle = () => {
     this.mobileWidthToggle = !this.mobileWidthToggle;
+    if (this.mobileWidthToggle) {
+      this.renderer.addClass(document.body, 'overflow-hidden');
+    } else {
+      this.renderer.removeClass(document.body, 'overflow-hidden');
+    }
   };
   closeMenuRightbar = () => {
     this.mobileWidthToggle = !this.mobileWidthToggle;
+    this.renderer.removeClass(document.body, 'overflow-hidden');
   };
   changeTheme = () => {
     this.isDarkMode = !this.isDarkMode;
@@ -59,6 +72,7 @@ export class HeaderComponent implements OnInit {
   onDocumentClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.mobileWidthToggle = false;
+      this.renderer.removeClass(document.body, 'overflow-hidden');
     }
   }
 }

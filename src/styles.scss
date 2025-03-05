@@ -61,6 +61,7 @@ body {
   --headingFontFamily: "Josefin Sans", sans-serif;
   --letterSpace: 1px;
   --inputOutline: rgba(0, 0, 0, 0.1);
+  --menuIcon: #44474e;
 
   @include mat.button-overrides((filled-container-shape: 6px,
       filled-container-color:#AD49E1,
@@ -100,8 +101,9 @@ body {
 
 main {
   position: relative;
-  top: 80px;
+  top: 70px;
 }
+
 
 #preloader img.loader {
   position: absolute;
@@ -192,6 +194,10 @@ li.menuItem a:after {
 
 li.menuItem a:hover:after {
   width: 100%;
+}
+
+.mobileMenuIcon {
+  color: var(--menuIcon) !important;
 }
 
 /* theme button */

@@ -25,6 +25,7 @@ export class SharedService {
     { id: '12', colorVar: '--letterSpace', colorCode: '6px' },
     // { id: '13', colorVar: '--cardBg', colorCode: '#363062' },
     { id: '14', colorVar: '--cardBorder', colorCode: '1px solid #847575' },
+    { id: '15', colorVar: '--menuIcon', colorCode: '#fff' },
   ];
   setItem(value: string): void {
     localStorage.setItem('themeMode', JSON.stringify(this.darkTheme));
