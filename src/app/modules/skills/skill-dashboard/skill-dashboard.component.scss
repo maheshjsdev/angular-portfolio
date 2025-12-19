@@ -1,17 +1,17 @@
 .skillBlock {
-    display: flex;
+    display: grid;
     max-width: 100%;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    gap: 25px;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
 
     .skillItem {
         padding: 5px;
         border-radius: 15px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px var(--cardBg) !important;
-        min-width: 175px;
-        min-height: 170px;
+        min-width: 150px;
+        min-height: 140px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -24,7 +24,7 @@
         transition: transform 0.3s, box-shadow 0.3s;
 
         img {
-            width: 100%;
+            width: 120px;
             transition: all 0.3s ease-in-out;
         }
 
@@ -37,7 +37,38 @@
 
 }
 
+@media(max-width:991px) {
+
+    .skillItem {
+        min-width: 120px !important;
+        min-height: 120px !important;
+
+        img {
+            width: 90px !important;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+@media(max-width:767px) {
+    .skillItem {
+        min-width: 80px !important;
+        min-height: 80px !important;
+
+        img {
+            width: 60px !important;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
 @media(max-width:576px) {
+    .skillBlock {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     ::ng-deep {
 
         .mat-mdc-row,

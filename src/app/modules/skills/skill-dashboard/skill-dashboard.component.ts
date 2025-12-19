@@ -15,10 +15,13 @@ export class SkillDashboardComponent {
     { path: './assets/img/icons8-html-5.svg', alt: 'html' },
     { path: './assets/img/icons8-css3.svg', alt: 'css' },
     { path: './assets/img/bootstrap.svg', alt: 'bootstrap' },
+    { path: './assets/img/tailwind.png', alt: 'tailwind' },
     { path: './assets/img/icons8-javascript.svg', alt: 'javascript' },
     { path: './assets/img/jquery.svg', alt: 'jquery' },
     { path: './assets/img/angularjs.svg', alt: 'angular' },
+    { path: './assets/img/react.svg', alt: 'react' },
     { path: './assets/img/icons8-nodejs.svg', alt: 'nodejs' },
+    { path: './assets/img/monogodb.svg', alt: 'mongodb' },
   ];
   displayedColumns: string[] = ['id', 'proName', 'build'];
   dataSource = new MatTableDataSource();

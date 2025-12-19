@@ -276,6 +276,7 @@ body::-webkit-scrollbar-thumb {
   height: 239px;
   margin: 0 auto;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .profileHeading {
