@@ -9,7 +9,7 @@ export class ProjectService {
       id: 1,
       proName: 'BeeduConnect',
       build: 'HTML, SCSS, Bootstarp, Angular 18, Typescript, .Net, MySQL',
-      path: 'https://edux.jotetx.com/#/vdu/login',
+      path: 'https://edux.jodetx.com/#/vdu/login',
     },
 
     {
